@@ -11,13 +11,13 @@ import Screen from '../../../componentes/Screen/Screen';
 
 import Constants from 'expo-constants';
 
-export default function PostAgendamento() {
+export default function PostCliente() {
   const { register, setValue, handleSubmit, control, reset, formState: { errors } } = useForm({
     defaultValues: {
-      dataAgendamento: '',
-      horaAgendamento: '',
-      idPet: '',
-      idServico:''
+      nomeCliente: '',
+      cpf: '',
+      endereco: '',
+      telefone:''
     }
   });
   const onSubmit = data => {
@@ -37,12 +37,12 @@ export default function PostAgendamento() {
       <Header carrierName={"Pet Shop CãoPeão"} />
       <Menu />
       <Screen>
-      <View>
-            <Text style={styles.title}>Cadastro do Agendamento</Text>
+        <View>
+            <Text style={styles.title}>Cadastro do Cliente</Text>
         </View>
         <View >
 
-          <Text style={styles.label}>Data do Agendamento</Text>
+          <Text style={styles.label}>Nome do Cliente</Text>
           <Controller
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
@@ -53,10 +53,10 @@ export default function PostAgendamento() {
                 value={value}
               />
             )}
-            name="dataAgendamento"
+            name="nomeCliente"
             rules={{ required: true }}
           />
-          <Text style={styles.label}>Hora do Agendamento</Text>
+          <Text style={styles.label}>CPF</Text>
           <Controller
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
@@ -67,10 +67,10 @@ export default function PostAgendamento() {
                 value={value}
               />
             )}
-            name="hora"
+            name="cpf"
             rules={{ required: true }}
           />
-          <Text style={styles.label}>Id Pet</Text>
+          <Text style={styles.label}>Endereço</Text>
           <Controller
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
@@ -81,11 +81,11 @@ export default function PostAgendamento() {
                 value={value}
               />
             )}
-            name="idPet"
+            name="endereco"
             rules={{ required: true }}
           />
 
-      <Text style={styles.label}>Id Servico</Text>
+      <Text style={styles.label}>Telefone</Text>
           <Controller
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
@@ -96,7 +96,7 @@ export default function PostAgendamento() {
                 value={value}
               />
             )}
-            name="idServico"
+            name="telefone"
             rules={{ required: true }}
           />
           <View style={styles.button}>

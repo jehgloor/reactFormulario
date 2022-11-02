@@ -11,13 +11,13 @@ import Screen from '../../../componentes/Screen/Screen';
 
 import Constants from 'expo-constants';
 
-export default function PostAgendamento() {
+export default function PostPet() {
   const { register, setValue, handleSubmit, control, reset, formState: { errors } } = useForm({
     defaultValues: {
-      dataAgendamento: '',
-      horaAgendamento: '',
-      idPet: '',
-      idServico:''
+      nomePet: '',
+      dataNascimento: '',
+      deficiencia: '',
+      especie:''
     }
   });
   const onSubmit = data => {
@@ -38,11 +38,11 @@ export default function PostAgendamento() {
       <Menu />
       <Screen>
       <View>
-            <Text style={styles.title}>Cadastro do Agendamento</Text>
+            <Text style={styles.title}>Cadastro do Pet</Text>
         </View>
         <View >
 
-          <Text style={styles.label}>Data do Agendamento</Text>
+          <Text style={styles.label}>Nome do Pet</Text>
           <Controller
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
@@ -53,10 +53,10 @@ export default function PostAgendamento() {
                 value={value}
               />
             )}
-            name="dataAgendamento"
+            name="nomePet"
             rules={{ required: true }}
           />
-          <Text style={styles.label}>Hora do Agendamento</Text>
+          <Text style={styles.label}>Data do Nascimento</Text>
           <Controller
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
@@ -67,10 +67,10 @@ export default function PostAgendamento() {
                 value={value}
               />
             )}
-            name="hora"
+            name="dataNascimento"
             rules={{ required: true }}
           />
-          <Text style={styles.label}>Id Pet</Text>
+          <Text style={styles.label}>Deficiencia</Text>
           <Controller
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
@@ -81,11 +81,11 @@ export default function PostAgendamento() {
                 value={value}
               />
             )}
-            name="idPet"
+            name="deficiencia"
             rules={{ required: true }}
           />
 
-      <Text style={styles.label}>Id Servico</Text>
+      <Text style={styles.label}>Especie</Text>
           <Controller
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
@@ -96,7 +96,7 @@ export default function PostAgendamento() {
                 value={value}
               />
             )}
-            name="idServico"
+            name="especie"
             rules={{ required: true }}
           />
           <View style={styles.button}>
@@ -146,6 +146,7 @@ const styles = StyleSheet.create({
     height: 40,
     padding: 10,
     borderRadius: 4,
+    
   },
   title: {
     color:'#006335',

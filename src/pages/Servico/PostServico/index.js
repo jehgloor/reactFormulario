@@ -11,13 +11,11 @@ import Screen from '../../../componentes/Screen/Screen';
 
 import Constants from 'expo-constants';
 
-export default function PostAgendamento() {
+export default function PostServico() {
   const { register, setValue, handleSubmit, control, reset, formState: { errors } } = useForm({
     defaultValues: {
-      dataAgendamento: '',
-      horaAgendamento: '',
-      idPet: '',
-      idServico:''
+      tipoServico: '',
+      valor: '',
     }
   });
   const onSubmit = data => {
@@ -37,12 +35,12 @@ export default function PostAgendamento() {
       <Header carrierName={"Pet Shop CãoPeão"} />
       <Menu />
       <Screen>
-      <View>
-            <Text style={styles.title}>Cadastro do Agendamento</Text>
+        <View>
+            <Text style={styles.title}>Cadastro do Serviço</Text>
         </View>
         <View >
 
-          <Text style={styles.label}>Data do Agendamento</Text>
+          <Text style={styles.label}>Tipo do Serviço</Text>
           <Controller
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
@@ -53,10 +51,10 @@ export default function PostAgendamento() {
                 value={value}
               />
             )}
-            name="dataAgendamento"
+            name="tipoServico"
             rules={{ required: true }}
           />
-          <Text style={styles.label}>Hora do Agendamento</Text>
+          <Text style={styles.label}>Valor</Text>
           <Controller
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
@@ -67,38 +65,10 @@ export default function PostAgendamento() {
                 value={value}
               />
             )}
-            name="hora"
+            name="valor"
             rules={{ required: true }}
           />
-          <Text style={styles.label}>Id Pet</Text>
-          <Controller
-            control={control}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <TextInput
-                style={styles.input}
-                onBlur={onBlur}
-                onChangeText={value => onChange(value)}
-                value={value}
-              />
-            )}
-            name="idPet"
-            rules={{ required: true }}
-          />
-
-      <Text style={styles.label}>Id Servico</Text>
-          <Controller
-            control={control}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <TextInput
-                style={styles.input}
-                onBlur={onBlur}
-                onChangeText={value => onChange(value)}
-                value={value}
-              />
-            )}
-            name="idServico"
-            rules={{ required: true }}
-          />
+          
           <View style={styles.button}>
             <Button
               style={styles.buttonInner}
