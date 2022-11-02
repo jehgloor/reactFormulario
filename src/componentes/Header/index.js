@@ -1,4 +1,4 @@
-import { StyleSheet, View, TouchableOpacity, Text, Image } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function Header({ carrierName }) {
     return (
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 50,
-        
+
     },
     containerCarrierName: {
         alignItems: 'center',

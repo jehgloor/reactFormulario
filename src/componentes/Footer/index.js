@@ -1,6 +1,5 @@
-import { View, StyleSheet, Text } from "react-native";
-import { Feather } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
+import { Feather, MaterialIcons } from '@expo/vector-icons';
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Footer({ email, phone }) {
     return (
@@ -18,7 +17,7 @@ export default function Footer({ email, phone }) {
 }
 
 const styles = StyleSheet.create({
-    
+
     container: {
         backgroundColor: '#108a00',
         paddingTop: 30,
