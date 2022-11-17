@@ -2,7 +2,7 @@
 import React, {Component} from "react";
 import { View, Text, StyleSheet, ScrollView} from "react-native";
 
-class GetAgendamento extends Component{
+class GetClientes extends Component{
 
     render(){
         return(
@@ -10,14 +10,14 @@ class GetAgendamento extends Component{
           
             <ScrollView>
 
-                <Text style={styles.title}>Agendamento</Text>
+                <Text style={styles.title}>Cliente</Text>
                 <View style={styles.input}>
                 <Text style={styles.inputTextChave}>id: </Text>   
-                <Text style={styles.inputTextValor}>{this.props.data.idAgendamento}</Text>  
+                <Text style={styles.inputTextValor}>{this.props.data.idCliente}</Text>  
                 </View>
                 <View style={styles.input}>
-                <Text style={styles.inputTextChave}>Data: </Text>
-                <Text style={styles.inputTextValor}>{this.props.data.data} </Text>
+                <Text style={styles.inputTextChave}>Nome do Cliente: </Text>
+                <Text style={styles.inputTextValor}>{this.props.data.nome} </Text>
                 </View>
                 
                 
@@ -28,7 +28,7 @@ class GetAgendamento extends Component{
     }
 }
 
-export default GetAgendamento;
+export default GetClientes;
 
 const styles = StyleSheet.create({
     container: {

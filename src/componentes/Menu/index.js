@@ -5,10 +5,7 @@ export default function Menu() {
         <View style={styles.container}>
             <View style={styles.containerTextMenu}>
                 <Text style={styles.textMenu}>
-                    <Text style={styles.textMenuRastreamento}>
-                        Agendamento
-                    </Text>
-                    {'    '}Pet    Cliente    Serviço     Funcionário
+                    Agendamento     Pet    Cliente    Serviço     Funcionário
                 </Text>
             </View>
         </View>
