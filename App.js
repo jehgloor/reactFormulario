@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 
-import { StyleSheet, ScrollView, View, Text, FlatList } from 'react-native';
+import { StyleSheet, ScrollView, View, Text, FlatList, Alert } from 'react-native';
 
 
 import PostAgendamento from './src/pages/Agendamento/PostAgendamento';
@@ -10,51 +10,39 @@ import PostServico from './src/pages/Servico/PostServico';
 // importe dos arquivos:
 import api from './src/services/api';
 // import Clientes from './src/componentes/Clientes';
-import GetClientes from './src/pages/Cliente/GetCliente';
-import GetAgendamento from './src/pages/Agendamento/GetAgendamento';
+import ItemListaCliente from './src/pages/Cliente/ItemListaCliente';
+import ItemListaAgendamento from './src/pages/Agendamento/ItemListaAgendamento';
 import Header from './src/componentes/Header';
 import Menu from './src/componentes/Menu';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    //estado é o lugar onde vamos armazenar os agendamentos para exibir na tela
+function App () {
+  const [getClientes, setClientes] = useState([]);
+  const [getAgendamentos, setAgendamentos] = useState([]);
+  
+  useEffect(() => {
+    api.get('Cliente')
+      .then(response => setClientes(response.data))
+      .catch(error => Alert.alert("Erro ao carregar clientes", "Verifique se o servidor está rodando"));
 
-    this.state = {
-      GetClientes: [],
-      GetAgendamento: []
-      
-    }
-
-  }
-
-  async componentDidMount() {
-    const response = await api.get('Cliente');
-    const responseAgendamento = await api.get('Agendamento');
-    this.setState({
-      ... this.state,
-      clientes: response.data,
-      agendamentos: responseAgendamento.data,
-      
-    })
-  }
+    api.get('Agendamento')
+      .then(response => setAgendamentos(response.data))
+      .catch(error => Alert.alert("Erro ao carregar agendamentos", "Verifique se o servidor está rodando"));
+  }, []);
 
 
-
-  render() {
     return (
       <View >
        <Header carrierName={"Pet Shop CãoPeão"} />
        <Menu></Menu>
         <FlatList sytle={styles.list} 
-          data={this.state.clientes}
+          data={getClientes}
           keyExtractor={item => item.idCliente.toString()}
-          renderItem={({ item }) => <GetClientes data={item} />}
+          renderItem={({ item }) => <ItemListaCliente data={item} />}
         />
           <FlatList sytle={styles.list} 
-          data={this.state.agendamentos}
+          data={getAgendamentos}
           keyExtractor={item => item.idAgendamento.toString()}
-          renderItem={({ item }) => <GetAgendamento data={item} />}
+          renderItem={({ item }) => <ItemListaAgendamento data={item} />}
         />
 
 
@@ -69,7 +57,7 @@ class App extends Component {
 
       </View>
     )
-  }
+
 
 };
 
