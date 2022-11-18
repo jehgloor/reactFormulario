@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {  StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -10,16 +10,15 @@ import Menu from './src/componentes/Menu';
 import HomeAgendamento from './src/pages/Agendamento/HomeAgendamento';
 import HomeCliente from './src/pages/Cliente/HomeCliente';
 
-
 //aqui é o que aparece na home
 function HomeScreen({ navigation }) {
   return (
     <>
-    <View style={styles.homeScreen}>
-      <Text style={styles.textHomeScreenBemVindo}>Bem vindo ao PetShop CãoPeão</Text>
-      <Text style={styles.textHomeScreenMenu}>Acesse o menu acima para listar os dados</Text>
-      
-    </View>
+      <View style={styles.homeScreen}>
+        <Text style={styles.textHomeScreenBemVindo}>Bem vindo ao PetShop CãoPeão</Text>
+        <Text style={styles.textHomeScreenMenu}>Acesse o menu acima para listar os dados</Text>
+
+      </View>
     </>
   );
 }
@@ -33,6 +32,7 @@ function ComboHeaderMenu(props) {
     </>
   )
 }
+
 // chamando a propriedade de navegação: 
 const Stack = createNativeStackNavigator();
 
@@ -45,7 +45,7 @@ function App() {
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home', header: (props) => <ComboHeaderMenu {...props} /> }} />
         <Stack.Screen name="HomeCliente" component={HomeCliente} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
         <Stack.Screen name="HomeAgendamento" component={HomeAgendamento} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
-        
+
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -64,21 +64,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 80
   },
-  homeScreen:{
-    flex: 1, 
-    alignItems: 'center', 
+  homeScreen: {
+    flex: 1,
+    alignItems: 'center',
     justifyContent: 'center',
- 
+
   },
-  textHomeScreenBemVindo:{
-    fontWeight:'bold',
-    fontSize:40,
-    textAlign:'center',
-    paddingBottom:80
+  textHomeScreenBemVindo: {
+    fontWeight: 'bold',
+    fontSize: 40,
+    textAlign: 'center',
+    paddingBottom: 80
   },
-  textHomeScreenMenu:{
-    fontSize:20,
-    textAlign:'center'
+  textHomeScreenMenu: {
+    fontSize: 20,
+    textAlign: 'center'
   }
 })
 

@@ -2,7 +2,7 @@ import { View, StyleSheet, Text, Button } from "react-native";
 
 export default function Menu(props) {
     const pagina = props.route.name;
-    
+
     return (
         <View style={styles.container}>
             <View style={styles.containerTextMenu}>
