@@ -40,22 +40,7 @@ const styles = StyleSheet.create({
       margin: 10,
       padding: 10
     },
-    list: {
-      marginStart: 14,
-      marginEnd: 14,
-    },
-    label: {
-      color: 'black',
-      margin: 20,
-      marginLeft: 0,
-    },
-    button: {
-      marginTop: 40,
-      color: 'white',
-      height: 40,
-      backgroundColor: 'black',
-      borderRadius: 4,
-    },
+   
     inputTextChave: {
        fontWeight:'bold',
 

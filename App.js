@@ -1,85 +1,60 @@
-import React, { Component, useEffect, useState } from 'react';
+import React from 'react';
 
-import { StyleSheet, ScrollView, View, Text, FlatList, Alert } from 'react-native';
+import {  StyleSheet, Text, View } from 'react-native';
 
 
-import PostAgendamento from './src/pages/Agendamento/PostAgendamento';
-import PostCliente from './src/pages/Cliente/PostCliente';
-import PostPet from './src/pages/Pet/PostPet';
-import PostServico from './src/pages/Servico/PostServico';
-// importe dos arquivos:
-import api from './src/services/api';
-// import Clientes from './src/componentes/Clientes';
-import ItemListaCliente from './src/pages/Cliente/ItemListaCliente';
-import ItemListaAgendamento from './src/pages/Agendamento/ItemListaAgendamento';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Header from './src/componentes/Header';
 import Menu from './src/componentes/Menu';
-
-function App () {
-  const [getClientes, setClientes] = useState([]);
-  const [getAgendamentos, setAgendamentos] = useState([]);
-  
-  useEffect(() => {
-    api.get('Cliente')
-      .then(response => setClientes(response.data))
-      .catch(error => Alert.alert("Erro ao carregar clientes", "Verifique se o servidor está rodando"));
-
-    api.get('Agendamento')
-      .then(response => setAgendamentos(response.data))
-      .catch(error => Alert.alert("Erro ao carregar agendamentos", "Verifique se o servidor está rodando"));
-  }, []);
+import HomeAgendamento from './src/pages/Agendamento/HomeAgendamento';
+import HomeCliente from './src/pages/Cliente/HomeCliente';
 
 
-    return (
-      <View >
-       <Header carrierName={"Pet Shop CãoPeão"} />
-       <Menu></Menu>
-        <FlatList sytle={styles.list} 
-          data={getClientes}
-          keyExtractor={item => item.idCliente.toString()}
-          renderItem={({ item }) => <ItemListaCliente data={item} />}
-        />
-          <FlatList sytle={styles.list} 
-          data={getAgendamentos}
-          keyExtractor={item => item.idAgendamento.toString()}
-          renderItem={({ item }) => <ItemListaAgendamento data={item} />}
-        />
+//aqui é o que aparece na home
+function HomeScreen({ navigation }) {
+  return (
+    <>
+    <View style={styles.homeScreen}>
+      <Text style={styles.textHomeScreenBemVindo}>Bem vindo ao PetShop CãoPeão</Text>
+      <Text style={styles.textHomeScreenMenu}>Acesse o menu acima para listar os dados</Text>
+      
+    </View>
+    </>
+  );
+}
 
+// aqui foi criado um "combo" para aparecer o header e o menu juntos 
+function ComboHeaderMenu(props) {
+  return (
+    <>
+      <Header {...props} />
+      <Menu {...props}></Menu>
+    </>
+  )
+}
+// chamando a propriedade de navegação: 
+const Stack = createNativeStackNavigator();
 
-        {/* <View>
-          <ScrollView>
-            <PostAgendamento />
-            <PostPet />
-          </ScrollView>
+// aqui é chamada dos menu para navegação. 
+function App() {
+  return (
+    <NavigationContainer>
 
-        </View> */}
-
-
-      </View>
-    )
-
-
-};
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home', header: (props) => <ComboHeaderMenu {...props} /> }} />
+        <Stack.Screen name="HomeCliente" component={HomeCliente} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
+        <Stack.Screen name="HomeAgendamento" component={HomeAgendamento} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
+        
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 
 
 export default App;
 
-
-// export default function App() {
-//   return (
-//     <View>
-//       <ScrollView>
-//         <PostAgendamento />
-//         <PostPet />
-//       </ScrollView>
-
-//     </View>
-
-//     // <PostCliente></PostCliente>
-//     // <PostServico></PostServico>
-//   );
-// }
 
 const styles = StyleSheet.create({
   container: {
@@ -89,107 +64,24 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 80
   },
+  homeScreen:{
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center',
+ 
+  },
+  textHomeScreenBemVindo:{
+    fontWeight:'bold',
+    fontSize:40,
+    textAlign:'center',
+    paddingBottom:80
+  },
+  textHomeScreenMenu:{
+    fontSize:20,
+    textAlign:'center'
+  }
 })
 
 
 
-
-
-////////////////////////////////// codigo comentado ////////////////////////
-
-
-// import React, { Component } from 'react';
-
-// import { StyleSheet, ScrollView, View, Text, FlatList } from 'react-native';
-
-
-// import PostAgendamento from './src/pages/Agendamento/PostAgendamento';
-// import PostCliente from './src/pages/Cliente/PostCliente';
-// import PostPet from './src/pages/Pet/PostPet';
-// import PostServico from './src/pages/Servico/PostServico';
-// // importe dos arquivos:
-// import api from './src/services/api';
-// import Filmes from './src/componentes/Filmes';
-
-// class App extends Component {
-//   constructor(props) {
-//     super(props);
-//     //estado é o lugar onde vamos armazenar os agendamentos para exibir na tela
-
-//     this.state = {
-//       filmes: []
-//     }
-//   }
-
-//   // componentDidMount um metodo que é executado toda vez que o programe inicie= consulte minha api
-//   async componentDidMount() {
-//     const response = await api.get('r-api/?api=filmes');
-//     // quando alterar o estado, dai quero alterar o estado do filme 
-//     // tudo o que ele encontrou na url e armazenar no filmes
-//     this.setState({
-//       // o .data , é para pegar os dados que vem na response 
-//       filmes: response.data
-//     })
-//   }
-
-//   //interface grafica 
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         {/* data = conteudo da lista 
-//     keyExtractor = para cada filme tem uma chave para identificar
-//     renderItem = é a forma que vai ser exibido a lista */}
-//         <FlatList
-//           data={this.state.filmes}
-//           keyExtractor={item => item.id.toString()}
-//           renderItem={({ item }) => <Filmes data={item} />}
-//         >
-
-
-//         </FlatList>
-//         {/* <View>
-//           <ScrollView>
-//             <PostAgendamento />
-//             <PostPet />
-//           </ScrollView>
-
-//         </View> */}
-
-
-//       </View>
-
-
-
-//     )
-//   }
-
-// };
-
-
-// export default App;
-
-
-// // export default function App() {
-// //   return (
-// //     <View>
-// //       <ScrollView>
-// //         <PostAgendamento />
-// //         <PostPet />
-// //       </ScrollView>
-
-// //     </View>
-
-// //     // <PostCliente></PostCliente>
-// //     // <PostServico></PostServico>
-// //   );
-// // }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// })
 
