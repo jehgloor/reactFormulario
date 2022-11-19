@@ -10,7 +10,7 @@ export default function Menu(props) {
                     Agendamento
                 </Text>
                 {/* <Button style={styles.textMenu} title={"Agendamento" + ("HomeAgendamento" == pagina ? "***" : "")}></Button> */}
-                <Text style={styles.textMenu}>
+                <Text style={styles.textMenu} onPress={() => props.navigation.navigate('HomePet')}>
                     Pet
                 </Text>
                 {/* <Button style={styles.textMenu} title={"Cliente" + ("HomeCliente" == pagina ? "***" : "")}></Button> */}

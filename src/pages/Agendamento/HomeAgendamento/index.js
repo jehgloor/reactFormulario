@@ -10,7 +10,8 @@ function HomeAgendamento({ navigation }) {
 
     api.get('Agendamento')
       .then(response => setAgendamentos(response.data))
-      .catch(error => Alert.alert("Erro ao carregar agendamentos", "Verifique se o servidor está rodando"));
+      .then(console.log("Carregandop agendamentos: " + getAgendamentos))
+      .catch(error => alert("Erro ao carregar agendamentos", "Verifique se o servidor está rodando"));
   }, []);
 
   return (

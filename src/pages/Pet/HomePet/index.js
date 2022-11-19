@@ -1,25 +1,27 @@
 import { useEffect, useState } from "react";
 import { Button, FlatList, StyleSheet, Text, View } from "react-native";
 import api from "../../../services/api";
-import ItemListaCliente from "../ItemListaCliente";
+import ItemListaPet from "../ItemListaPet";
 
-function HomeCliente({ navigation }) {
-  const [getClientes, setClientes] = useState([]);
+
+function HomePet({ navigation }) {
+  const [getPets, setPets] = useState([]);
 
   useEffect(() => {
-
-    api.get('Cliente')
-      .then(response => setClientes(response.data))
-      .catch(error => alert("Erro ao carregar Clientes", "Verifique se o servidor está rodando"));
+  
+    api.get('Pet')
+      .then((response) => setPets(response.data))
+      .then((response) => console.log("Carregando pets: "+ response.data))
+      .catch((error) => alert("Erro ao carregar pets. Verifique se o servidor está rodando"));
   }, []);
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>HomeCliente</Text>
+      <Text>HomePet</Text>
       <FlatList sytle={styles.list}
-        data={getClientes}
-        keyExtractor={item => item.idCliente.toString()}
-        renderItem={({ item }) => <ItemListaCliente data={item} />}
+        data={getPets}
+        keyExtractor={({idPet}, index ) => idPet}
+        renderItem={({ item }) => <ItemListaPet data={item} />}
       />
       {/* <Button title="Home" onPress={() => navigation.navigate('Home')} /> */}
       <Button title="Voltar" onPress={() => navigation.goBack()} />
@@ -27,7 +29,7 @@ function HomeCliente({ navigation }) {
   );
 }
 
-export default HomeCliente;
+export default HomePet;
 
 const styles = StyleSheet.create({
   container: {

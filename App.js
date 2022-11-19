@@ -9,6 +9,7 @@ import Header from './src/componentes/Header';
 import Menu from './src/componentes/Menu';
 import HomeAgendamento from './src/pages/Agendamento/HomeAgendamento';
 import HomeCliente from './src/pages/Cliente/HomeCliente';
+import HomePet from './src/pages/Pet/HomePet';
 
 
 //aqui é o que aparece na home
@@ -44,8 +45,8 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home', header: (props) => <ComboHeaderMenu {...props} /> }} />
         <Stack.Screen name="HomeCliente" component={HomeCliente} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
-        <Stack.Screen name="HomeAgendamento" component={HomeAgendamento} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
-        
+       <Stack.Screen name="HomeAgendamento" component={HomeAgendamento} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
+        <Stack.Screen name="HomePet" component={HomePet} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
