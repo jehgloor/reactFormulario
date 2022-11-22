@@ -11,7 +11,7 @@ function HomePet({ navigation }) {
   
     api.get('Pet')
       .then((response) => setPets(response.data))
-      .catch((error) => Alert.alert(error));
+      .catch(error => Alert.alert("Erro ao carregar pets", "Verifique se o servidor está rodando"));
   }, []);
 
   return (
