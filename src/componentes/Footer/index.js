@@ -5,11 +5,11 @@ export default function Footer({ email, phone }) {
     return (
         <View style={styles.container}>
             <View style={styles.containerEmail}>
-                <MaterialIcons name="email" size={24} color="black" />
+                <MaterialIcons name="email" size={24} color="white" />
                 <Text style={styles.email}>{email}</Text>
             </View>
             <View style={styles.containerPhone}>
-                <Feather name="phone" size={24} color="black" />
+                <Feather name="phone" size={24} color="white" />
                 <Text style={styles.phone}> {phone}</Text>
             </View>
         </View>
@@ -19,7 +19,7 @@ export default function Footer({ email, phone }) {
 const styles = StyleSheet.create({
 
     container: {
-        backgroundColor: '#108a00',
+        backgroundColor: 'darkviolet',
         paddingTop: 30,
         flexDirection: "row",
         paddingStart: 16,

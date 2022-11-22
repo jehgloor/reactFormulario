@@ -1,22 +1,25 @@
 import React from 'react';
+
 import { StyleSheet, Text, View } from 'react-native';
+
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Header from './src/components/Headers';
-import Menu from './src/components/Menu';
+import Header from './src/componentes/Header';
+import Menu from './src/componentes/Menu';
 import HomeAgendamento from './src/pages/Agendamento/HomeAgendamento';
 import HomeCliente from './src/pages/Cliente/HomeCliente';
+import HomePet from './src/pages/Pet/HomePet';
 import HomeServico from './src/pages/Servico/HomeServico';
-import { registerRootComponent } from 'expo';
-import Footer from './src/components/Footer';
+import Footer from './src/componentes/Footer'
 
 //aqui é o que aparece na home
 function HomeScreen({ navigation }) {
   return (
     <>
-      <View style={estilos.homeScreen}>
-        <Text style={estilos.textHomeScreenBemVindo}>Bem vindo ao PetShop CãoPeão</Text>
-        <Text style={estilos.textHomeScreenMenu}>Acesse o menu acima para listar os dados</Text>
+      <View style={styles.homeScreen}>
+        <Text style={styles.textHomeScreenBemVindo}>Bem vindo ao PetShop Cão-Peão</Text>
+        <Text style={styles.textHomeScreenMenu}>Acesse o menu acima para listar os dados</Text>
 
       </View>
     </>
@@ -29,7 +32,6 @@ function ComboHeaderMenu(props) {
     <>
       <Header {...props} />
       <Menu {...props}></Menu>
-      
     </>
   )
 }
@@ -46,44 +48,35 @@ function App() {
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home', header: (props) => <ComboHeaderMenu {...props} /> }} />
         <Stack.Screen name="HomeCliente" component={HomeCliente} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
         <Stack.Screen name="HomeAgendamento" component={HomeAgendamento} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
+        <Stack.Screen name="HomePet" component={HomePet} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
         <Stack.Screen name="HomeServico" component={HomeServico} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
       </Stack.Navigator>
+      <Footer email={'caopeao@gmail.com'} phone={'(43)3333-0000'}/>
     </NavigationContainer>
   );
 }
 
-
-
 export default App;
 
-
-const estilos = StyleSheet.create({
-  
+const styles = StyleSheet.create({
   homeScreen: {
-    backgroundColor: '#FDF5E6',
     flex: 1,
+    backgroundColor: '#FDF5E6',
     alignItems: 'center',
     justifyContent: 'center',
-
   },
-  
-  textHomeScreenBemVindo: {
+  textHomeScreenBemVindo:{
     color:"#6A5ACD",
-    fontWeight: 'bold',
-    fontSize: 40,
+    fontWeight:'bold',
+    fontSize:40,
     lineHeight:50,
-    textAlign: 'center',
-    paddingBottom: 70,
+    textAlign:'center',
+    paddingBottom:70
   },
-  textHomeScreenMenu: {
-    color: "#4B0082",
-    fontSize: 20,
-    textAlign: 'center',
-    fontWeight: "bold",
+  textHomeScreenMenu:{
+    color:"#4B0082",
+    fontSize:20,
+    textAlign:'center',
+    fontWeight: "bold"
   }
-});
-
-
-
-
-
+})
