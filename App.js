@@ -11,6 +11,7 @@ import HomeAgendamento from './src/pages/Agendamento/HomeAgendamento';
 import HomeCliente from './src/pages/Cliente/HomeCliente';
 import HomePet from './src/pages/Pet/HomePet';
 import HomeServico from './src/pages/Servico/HomeServico';
+
 import Footer from './src/componentes/Footer'
 
 //aqui é o que aparece na home
