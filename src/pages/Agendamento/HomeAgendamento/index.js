@@ -21,7 +21,6 @@ function HomeAgendamento({ navigation }) {
         keyExtractor={item => item.idAgendamento.toString()}
         renderItem={({ item }) => <ItemListaAgendamento data={item} />}
       />
-      {/* <Button title="Home" onPress={() => navigation.navigate('Home')} /> */}
       <TouchableOpacity style={styles.botao} title="Voltar" onPress={() => navigation.goBack()}>
         <Text style={styles.textoBotao}>
           Voltar
@@ -45,7 +44,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     lineHeight: 42,
     fontWeight: "bold",
-
   },
   botao: {
     marginTop: 30,

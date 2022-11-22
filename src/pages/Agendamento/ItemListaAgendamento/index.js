@@ -3,13 +3,10 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 
 class ItemListaAgendamento extends Component {
-
   render() {
     return (
       <View style={styles.container}>
-
         <ScrollView>
-
           <Text style={styles.title}>Agendamento</Text>
           <View style={styles.input}>
             <Text style={styles.inputTextChave}>id: </Text>
@@ -19,10 +16,7 @@ class ItemListaAgendamento extends Component {
             <Text style={styles.inputTextChave}>Data: </Text>
             <Text style={styles.inputTextValor}>{this.props.data.data} </Text>
           </View>
-
-
         </ScrollView>
-
       </View>
     )
   }
@@ -31,6 +25,7 @@ class ItemListaAgendamento extends Component {
 export default ItemListaAgendamento;
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -58,10 +53,6 @@ const styles = StyleSheet.create({
   },
   inputTextChave: {
     fontWeight: 'bold',
-
-  },
-  inputTextValor: {
-
   },
   input: {
     backgroundColor: '#e7e7e7',

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, FlatList, StyleSheet, Text, View } from "react-native";
+import { TouchableOpacity, FlatList, StyleSheet, Text, View } from "react-native";
 import api from "../../../services/api";
 import ItemListaCliente from "../ItemListaCliente";
 
@@ -7,7 +7,6 @@ function HomeCliente({ navigation }) {
     const [getClientes, setClientes] = useState([]);
 
     useEffect(() => {
-
         api.get('Cliente')
             .then(response => setClientes(response.data))
             .catch(error => Alert.alert("Erro ao carregar Clientes", "Verifique se o servidor está rodando"));
@@ -21,7 +20,6 @@ function HomeCliente({ navigation }) {
                 keyExtractor={item => item.idCliente.toString()}
                 renderItem={({ item }) => <ItemListaCliente data={item} />}
             />
-            {/* <Button title="Home" onPress={() => navigation.navigate('Home')} /> */}
             <Button title="Voltar" onPress={() => navigation.goBack()} />
         </View>
     );
