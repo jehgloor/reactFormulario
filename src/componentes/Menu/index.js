@@ -9,11 +9,9 @@ export default function Menu(props) {
                 <Text style={styles.textMenu} onPress={() => props.navigation.navigate('HomeAgendamento')}>
                     Agendamento
                 </Text>
-                {/* <Button style={styles.textMenu} title={"Agendamento" + ("HomeAgendamento" == pagina ? "***" : "")}></Button> */}
                 <Text style={styles.textMenu}>
                     Pet
                 </Text>
-                {/* <Button style={styles.textMenu} title={"Cliente" + ("HomeCliente" == pagina ? "***" : "")}></Button> */}
                 <Text style={styles.textMenu} onPress={() => props.navigation.navigate('HomeCliente')}>
                     Cliente
                 </Text>
@@ -30,7 +28,7 @@ export default function Menu(props) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#108a00',
+        backgroundColor: 'darkviolet',
         flexDirection: "row",
         paddingStart: 16,
         paddingEnd: 16,
@@ -46,14 +44,8 @@ const styles = StyleSheet.create({
 
     },
     textMenu: {
-        color: 'black',
-        marginRight: 10
-    },
-    textMenuRastreamento: {
-        backgroundColor: '#fafafaae',
-        borderRadius: 10
-    },
-    menuAtivo: {
-        backgroundColor: "red"
+        color: 'white',
+        marginRight: 10,
+        fontWeight: 'bold'
     }
 })

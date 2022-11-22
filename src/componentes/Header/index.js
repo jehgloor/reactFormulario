@@ -1,25 +1,25 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function Header({ carrierName }) {
+export default function Header() {
     return (
         <View style={styles.container}>
             <View style={styles.content}>
                 <TouchableOpacity style={styles.iconeButton} activeOpacity={0.9}>
                     <Image source={require('../../assets/iconeLogo.jpg')} style={styles.buttonImageIconStyle} />
                 </TouchableOpacity>
-                <View style={styles.containerCarrierName}>
-                    <Text style={styles.textCarrierName}>
-                        {carrierName}
+                <View style={styles.containerTextoLogo}>
+                    <Text style={styles.textoLogo}>
+                        PetShop Cão-Peão
                     </Text>
                 </View>
-            </View >
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#108a00',
+        backgroundColor: 'darkviolet',
         paddingTop: 44,
         flexDirection: "row",
         paddingStart: 16,
@@ -40,12 +40,14 @@ const styles = StyleSheet.create({
         borderRadius: 50,
 
     },
-    containerCarrierName: {
+    containerTextoLogo: {
         alignItems: 'center',
         flex: 1
     },
-    textCarrierName: {
+    textoLogo: {
+        flex: 1,
         fontSize: 18,
+        lineHeight: 28,
         fontWeight: "bold",
         color: 'white',
         textAlign: 'center'
