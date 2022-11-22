@@ -1,13 +1,14 @@
+
 import React from 'react';
 import { StyleSheet, Text, View } from "react-native";
-import Header from "../../../componentes/Header";
-import Menu from '../../../componentes/Menu';
+import Header from '../../../components/Headers';
+import Menu from '../../../components/Menu';
 
 import { Controller, useForm } from "react-hook-form";
 import { Button, TextInput } from "react-native";
 
-import Footer from '../../../componentes/Footer';
-import Screen from '../../../componentes/Screen/Screen';
+import Footer from '../../../components/Footer';
+import Screen from '../../../components/Screen';
 
 import Constants from 'expo-constants';
 
