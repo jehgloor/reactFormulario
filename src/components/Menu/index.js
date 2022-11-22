@@ -1,21 +1,25 @@
-import { View, StyleSheet, Text, Button } from "react-native";
+import React from "react";
+import { View, StyleSheet, Text } from "react-native";
 
-export default function Menu(props) {
+
+export default function Menu(props, {}){
     const pagina = props.route.name;
 
-    return (
+    return(
         <View style={styles.container}>
             <View style={styles.containerTextMenu}>
                 <Text style={styles.textMenu} onPress={() => props.navigation.navigate('HomeAgendamento')}>
                     Agendamento
                 </Text>
-                <Text style={styles.textMenu} onPress={() => props.navigation.navigate('HomePet')}>
+                {/* <Button style={styles.textMenu} title={"Agendamento" + ("HomeAgendamento" == pagina ? "***" : "")}></Button> */}
+                <Text style={styles.textMenu}>
                     Pet
                 </Text>
+                {/* <Button style={styles.textMenu} title={"Cliente" + ("HomeCliente" == pagina ? "***" : "")}></Button> */}
                 <Text style={styles.textMenu} onPress={() => props.navigation.navigate('HomeCliente')}>
                     Cliente
-                </Text >
-                <Text style={styles.textMenu} onPress={() => props.navigation.navigate('HomeServico')}>
+                </Text>
+                <Text style={styles.textMenu} onPress={() =>props.navigation.navigate('HomeServico')}>
                     Serviço
                 </Text>
                 <Text style={styles.textMenu}>
@@ -35,6 +39,8 @@ const styles = StyleSheet.create({
         paddingBottom: 10
     },
     containerTextMenu: {
+        paddingVertical: 10,
+        paddingLeft: 10,
         alignContent: 'space-between',
         display: 'flex',
         flex: 1,
@@ -46,6 +52,11 @@ const styles = StyleSheet.create({
     textMenu: {
         color: 'white',
         marginRight: 10,
-        fontWeight: 'bold'
-    }
+        fontWeight: "bold",
+    },
+    textMenuRastreamento: {
+        backgroundColor: '#fafafaae',
+        borderRadius: 10
+    },
+    
 })

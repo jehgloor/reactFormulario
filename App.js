@@ -10,6 +10,8 @@ import Menu from './src/componentes/Menu';
 import HomeAgendamento from './src/pages/Agendamento/HomeAgendamento';
 import HomeCliente from './src/pages/Cliente/HomeCliente';
 import HomePet from './src/pages/Pet/HomePet';
+import HomeServico from './src/pages/Servico/HomeServico';
+
 import Footer from './src/componentes/Footer'
 
 //aqui é o que aparece na home
@@ -48,6 +50,7 @@ function App() {
         <Stack.Screen name="HomeCliente" component={HomeCliente} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
         <Stack.Screen name="HomeAgendamento" component={HomeAgendamento} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
         <Stack.Screen name="HomePet" component={HomePet} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
+        <Stack.Screen name="HomeServico" component={HomeServico} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
       </Stack.Navigator>
       <Footer email={'caopeao@gmail.com'} phone={'(43)3333-0000'}/>
     </NavigationContainer>
