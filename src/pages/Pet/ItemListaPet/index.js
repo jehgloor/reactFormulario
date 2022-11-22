@@ -19,8 +19,22 @@ class ItemListaPet extends Component{
                   <Text style={styles.inputTextChave}>Nome: </Text>
                   <Text style={styles.inputTextValor}>{this.props.data.nomePet} </Text>
                 </View>
-                
-                
+                <View style={styles.input}>
+                  <Text style={styles.inputTextChave}>Id do dono: </Text>
+                  <Text style={styles.inputTextValor}>{this.props.data.idCliente} </Text>
+                </View>
+                <View style={styles.input}>
+                  <Text style={styles.inputTextChave}>Especie: </Text>
+                  <Text style={styles.inputTextValor}>{this.props.data.especie} </Text>
+                </View>
+                <View style={styles.input}>
+                  <Text style={styles.inputTextChave}>Deficiencia: </Text>
+                  <Text style={styles.inputTextValor}>{this.props.data.deficiencia} </Text>
+                </View>
+                <View style={styles.input}>
+                  <Text style={styles.inputTextChave}>Nascimento: </Text>
+                  <Text style={styles.inputTextValor}>{this.props.data.nascimento} </Text>
+                </View>
             </ScrollView>
             
             </View>

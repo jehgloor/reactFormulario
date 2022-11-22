@@ -58,10 +58,6 @@ const styles = StyleSheet.create({
     },
     inputTextChave: {
        fontWeight:'bold',
-
-    },
-    inputTextValor: {
-       
     },
     input: {
     backgroundColor: '#e7e7e7',

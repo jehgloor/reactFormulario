@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function Header({ carrierName }) {
+export default function Header() {
     return (
         <View style={styles.container}>
             <View style={styles.content}>
@@ -9,7 +9,7 @@ export default function Header({ carrierName }) {
                 </TouchableOpacity>
                 <View style={styles.containerCarrierName}>
                     <Text style={styles.textCarrierName}>
-                        {carrierName}
+                        PetShop CãoPeão
                     </Text>
                 </View>
             </View >
@@ -19,7 +19,7 @@ export default function Header({ carrierName }) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#108a00',
+        backgroundColor: 'darkviolet',
         paddingTop: 44,
         flexDirection: "row",
         paddingStart: 16,
@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     },
     textCarrierName: {
         fontSize: 18,
+        lineHeight:28,
         fontWeight: "bold",
         color: 'white',
         textAlign: 'center'

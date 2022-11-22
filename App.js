@@ -58,28 +58,25 @@ export default App;
 
 
 const styles = StyleSheet.create({
-  container: {
+  homeScreen:{
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FDF5E6',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 80
-  },
-  homeScreen:{
-    flex: 1, 
-    alignItems: 'center', 
-    justifyContent: 'center',
- 
   },
   textHomeScreenBemVindo:{
+    color:"#6A5ACD",
     fontWeight:'bold',
     fontSize:40,
+    lineHeight:50,
     textAlign:'center',
-    paddingBottom:80
+    paddingBottom:70
   },
   textHomeScreenMenu:{
+    color:"#4B0082",
     fontSize:20,
-    textAlign:'center'
+    textAlign:'center',
+    fontWeight: "bold"
   }
 })
 
