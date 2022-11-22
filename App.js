@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {  StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -10,17 +10,17 @@ import Menu from './src/componentes/Menu';
 import HomeAgendamento from './src/pages/Agendamento/HomeAgendamento';
 import HomeCliente from './src/pages/Cliente/HomeCliente';
 import HomePet from './src/pages/Pet/HomePet';
-
+import Footer from './src/componentes/Footer'
 
 //aqui é o que aparece na home
 function HomeScreen({ navigation }) {
   return (
     <>
-    <View style={styles.homeScreen}>
-      <Text style={styles.textHomeScreenBemVindo}>Bem vindo ao PetShop CãoPeão</Text>
-      <Text style={styles.textHomeScreenMenu}>Acesse o menu acima para listar os dados</Text>
-      
-    </View>
+      <View style={styles.homeScreen}>
+        <Text style={styles.textHomeScreenBemVindo}>Bem vindo ao PetShop Cão-Peão</Text>
+        <Text style={styles.textHomeScreenMenu}>Acesse o menu acima para listar os dados</Text>
+
+      </View>
     </>
   );
 }
@@ -34,6 +34,7 @@ function ComboHeaderMenu(props) {
     </>
   )
 }
+
 // chamando a propriedade de navegação: 
 const Stack = createNativeStackNavigator();
 
@@ -45,20 +46,18 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home', header: (props) => <ComboHeaderMenu {...props} /> }} />
         <Stack.Screen name="HomeCliente" component={HomeCliente} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
-       <Stack.Screen name="HomeAgendamento" component={HomeAgendamento} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
+        <Stack.Screen name="HomeAgendamento" component={HomeAgendamento} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
         <Stack.Screen name="HomePet" component={HomePet} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
       </Stack.Navigator>
+      <Footer email={'caopeao@gmail.com'} phone={'(43)3333-0000'}/>
     </NavigationContainer>
   );
 }
 
-
-
 export default App;
 
-
 const styles = StyleSheet.create({
-  homeScreen:{
+  homeScreen: {
     flex: 1,
     backgroundColor: '#FDF5E6',
     alignItems: 'center',
@@ -79,7 +78,3 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   }
 })
-
-
-
-

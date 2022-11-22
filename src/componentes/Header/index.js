@@ -7,12 +7,12 @@ export default function Header() {
                 <TouchableOpacity style={styles.iconeButton} activeOpacity={0.9}>
                     <Image source={require('../../assets/iconeLogo.jpg')} style={styles.buttonImageIconStyle} />
                 </TouchableOpacity>
-                <View style={styles.containerCarrierName}>
-                    <Text style={styles.textCarrierName}>
-                        PetShop CãoPeão
+                <View style={styles.containerTextoLogo}>
+                    <Text style={styles.textoLogo}>
+                        PetShop Cão-Peão
                     </Text>
                 </View>
-            </View >
+            </View>
         </View>
     )
 }
@@ -40,13 +40,14 @@ const styles = StyleSheet.create({
         borderRadius: 50,
 
     },
-    containerCarrierName: {
+    containerTextoLogo: {
         alignItems: 'center',
         flex: 1
     },
-    textCarrierName: {
+    textoLogo: {
+        flex: 1,
         fontSize: 18,
-        lineHeight:28,
+        lineHeight: 28,
         fontWeight: "bold",
         color: 'white',
         textAlign: 'center'

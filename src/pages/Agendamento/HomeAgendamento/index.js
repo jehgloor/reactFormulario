@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import api from "../../../services/api";
 import ItemListaAgendamento from "../ItemListaAgendamento";
 
@@ -23,7 +23,7 @@ function HomeAgendamento({ navigation }) {
       />
       <TouchableOpacity style={styles.botao} title="Voltar" onPress={() => navigation.goBack()}>
         <Text style={styles.textoBotao}>
-        Voltar
+          Voltar
         </Text>
       </TouchableOpacity>
     </View>
@@ -40,10 +40,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   texto: {
-    color:"#6A5ACD",
+    color: "#6A5ACD",
     fontSize: 22,
-    lineHeight:42,
-    fontWeight:"bold"
+    lineHeight: 42,
+    fontWeight: "bold",
   },
   botao: {
     marginTop: 30,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     borderRadius: 6,
   },
-  textoBotao:{
+  textoBotao: {
     textAlign: "center",
     color: "#ffffff",
     fontSize: 16,
