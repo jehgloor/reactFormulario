@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, StyleSheet, Text, TouchableOpacity, View, Alert } from "react-native";
 import api from "../../../services/api";
 import ItemListaAgendamento from "../ItemListaAgendamento";
 
