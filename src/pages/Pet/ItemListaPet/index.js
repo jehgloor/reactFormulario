@@ -29,7 +29,7 @@ class ItemListaPet extends Component{
                 </View>
                 <View style={styles.input}>
                   <Text style={styles.inputTextChave}>Deficiencia: </Text>
-                  <Text style={styles.inputTextValor}>{this.props.data.deficiencia} </Text>
+                  <Text style={styles.inputTextValor}>{this.props.data.deficiencia.toString()} </Text>
                 </View>
                 <View style={styles.input}>
                   <Text style={styles.inputTextChave}>Nascimento: </Text>
