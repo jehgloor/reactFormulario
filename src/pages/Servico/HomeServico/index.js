@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
   },
   texto: {
     color: "#6A5ACD",
-    fontSize: 26,
-    lineHeight: 46,
+    fontSize: 22,
+    lineHeight: 42,
     fontWeight: "bold",
   },
   botao: {
