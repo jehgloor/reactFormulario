@@ -19,6 +19,14 @@ class ItemListaAgendamento extends Component {
             <Text style={styles.inputTextChave}>Data: </Text>
             <Text style={styles.inputTextValor}>{this.props.data.data} </Text>
           </View>
+          <View style={styles.input}>
+            <Text style={styles.inputTextChave}>Id Pet: </Text>
+            <Text style={styles.inputTextValor}>{this.props.data.idPet} </Text>
+          </View>
+          <View style={styles.input}>
+            <Text style={styles.inputTextChave}>Id Serviço: </Text>
+            <Text style={styles.inputTextValor}>{this.props.data.idServico} </Text>
+          </View>
 
 
         </ScrollView>
@@ -34,7 +42,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    //paddingTop: Constants.statusBarHeight,
     padding: 8,
     backgroundColor: 'white',
     margin: 10,
