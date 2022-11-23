@@ -15,11 +15,26 @@ class ItemListaCliente extends Component {
             <Text style={styles.inputTextChave}>id: </Text>
             <Text style={styles.inputTextValor}>{this.props.data.idCliente}</Text>
           </View>
+
           <View style={styles.input}>
             <Text style={styles.inputTextChave}>Nome do Cliente: </Text>
             <Text style={styles.inputTextValor}>{this.props.data.nome} </Text>
           </View>
 
+          <View style={styles.input}>
+            <Text style={styles.inputTextChave}>Cpf: </Text>
+            <Text style={styles.inputTextValor}>{this.props.data.cpf} </Text>
+          </View>
+
+          <View style={styles.input}>
+            <Text style={styles.inputTextChave}>Endereco: </Text>
+            <Text style={styles.inputTextValor}>{this.props.data.endereco} </Text>
+          </View>
+
+          <View style={styles.input}>
+            <Text style={styles.inputTextChave}>Telefone: </Text>
+            <Text style={styles.inputTextValor}>{this.props.data.telefone} </Text>
+          </View>
 
         </ScrollView>
 

@@ -9,6 +9,9 @@ import Header from './src/componentes/Header';
 import Menu from './src/componentes/Menu';
 import HomeAgendamento from './src/pages/Agendamento/HomeAgendamento';
 import HomeCliente from './src/pages/Cliente/HomeCliente';
+import HomePet from './src/pages/Pet/HomePet';
+import HomeServico from './src/pages/Servico/HomeServico';
+
 import Footer from './src/componentes/Footer'
 
 //aqui é o que aparece na home
@@ -46,7 +49,8 @@ function App() {
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home', header: (props) => <ComboHeaderMenu {...props} /> }} />
         <Stack.Screen name="HomeCliente" component={HomeCliente} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
         <Stack.Screen name="HomeAgendamento" component={HomeAgendamento} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
-
+        <Stack.Screen name="HomePet" component={HomePet} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
+        <Stack.Screen name="HomeServico" component={HomeServico} options={{ header: (props) => <ComboHeaderMenu {...props} /> }} />
       </Stack.Navigator>
       <Footer email={'caopeao@gmail.com'} phone={'(43)3333-0000'}/>
     </NavigationContainer>
@@ -61,19 +65,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#FDF5E6',
     alignItems: 'center',
     justifyContent: 'center',
-
   },
-  textHomeScreenBemVindo: {
-    color: '#6A5ACD',
-    fontWeight: 'bold',
-    fontSize: 40,
-    textAlign: 'center',
-    paddingBottom: 70
+  textHomeScreenBemVindo:{
+    color:"#6A5ACD",
+    fontWeight:'bold',
+    fontSize:40,
+    lineHeight:50,
+    textAlign:'center',
+    paddingBottom:70
   },
-  textHomeScreenMenu: {
-    color: '#4B0082',
-    fontSize: 20,
-    textAlign: 'center',
-    fontWeight: 'bold'
+  textHomeScreenMenu:{
+    color:"#4B0082",
+    fontSize:20,
+    textAlign:'center',
+    fontWeight: "bold"
   }
 })

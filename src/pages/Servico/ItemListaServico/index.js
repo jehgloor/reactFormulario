@@ -2,43 +2,38 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 
-class ItemListaAgendamento extends Component {
+class ItemListaServico extends Component {
   render() {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <Text style={styles.title}>Agendamento</Text>
+          <Text style={styles.title}>Servico</Text>
           <View style={styles.input}>
             <Text style={styles.inputTextChave}>id: </Text>
-            <Text style={styles.inputTextValor}>{this.props.data.idAgendamento}</Text>
+            <Text style={styles.inputTextValor}>{this.props.data.idServico}</Text>
           </View>
           <View style={styles.input}>
-            <Text style={styles.inputTextChave}>Data: </Text>
-            <Text style={styles.inputTextValor}>{this.props.data.data} </Text>
+            <Text style={styles.inputTextChave}>Serviço: </Text>
+            <Text style={styles.inputTextValor}>{this.props.data.tipoServico} </Text>
           </View>
           <View style={styles.input}>
-            <Text style={styles.inputTextChave}>Id Pet: </Text>
-            <Text style={styles.inputTextValor}>{this.props.data.idPet} </Text>
+            <Text style={styles.inputTextChave}>Valor: </Text>
+            <Text style={styles.inputTextValor}>{this.props.data.valor} </Text>
           </View>
-          <View style={styles.input}>
-            <Text style={styles.inputTextChave}>Id Serviço: </Text>
-            <Text style={styles.inputTextValor}>{this.props.data.idServico} </Text>
-          </View>
-
-
         </ScrollView>
       </View>
     )
   }
 }
 
-export default ItemListaAgendamento;
+export default ItemListaServico;
 
 const styles = StyleSheet.create({
 
   container: {
     flex: 1,
     justifyContent: 'center',
+    //paddingTop: Constants.statusBarHeight,
     padding: 8,
     backgroundColor: 'white',
     margin: 10,

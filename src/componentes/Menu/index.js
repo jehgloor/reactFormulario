@@ -9,13 +9,13 @@ export default function Menu(props) {
                 <Text style={styles.textMenu} onPress={() => props.navigation.navigate('HomeAgendamento')}>
                     Agendamento
                 </Text>
-                <Text style={styles.textMenu}>
+                <Text style={styles.textMenu} onPress={() => props.navigation.navigate('HomePet')}>
                     Pet
                 </Text>
                 <Text style={styles.textMenu} onPress={() => props.navigation.navigate('HomeCliente')}>
                     Cliente
-                </Text>
-                <Text style={styles.textMenu}>
+                </Text >
+                <Text style={styles.textMenu} onPress={() => props.navigation.navigate('HomeServico')}>
                     Serviço
                 </Text>
                 <Text style={styles.textMenu}>
