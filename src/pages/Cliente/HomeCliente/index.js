@@ -7,7 +7,6 @@ function HomeCliente({ navigation }) {
     const [getClientes, setClientes] = useState([]);
 
     useEffect(() => {
-
         api.get('Cliente')
             .then(response => setClientes(response.data))
             .catch(error => Alert.alert("Erro ao carregar Clientes", "Verifique se o servidor está rodando"));
