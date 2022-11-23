@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     title: {
-      color:'#006335',
+      color:'black',
       textAlign: 'center',
       fontWeight: "bold",
       fontSize: 15
