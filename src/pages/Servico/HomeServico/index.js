@@ -1,25 +1,25 @@
 import { useEffect, useState } from "react";
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import api from "../../../services/api";
-import ItemListaAgendamento from "../ItemListaAgendamento";
+import ItemListaServico from '../ItemListaServico';
 
-function HomeAgendamento({ navigation }) {
-  const [getAgendamentos, setAgendamentos] = useState([]);
+function HomeServico({ navigation }) {
+  const [getServico, setServico] = useState([]);
 
   useEffect(() => {
 
-    api.get('Agendamento')
-      .then(response => setAgendamentos(response.data))
-      .catch(error => Alert.alert("Erro ao carregar agendamentos", "Verifique se o servidor está rodando"));
+    api.get('Servico')
+      .then(response => setServico(response.data))
+      .catch(error => Alert.alert("Erro ao carregar serviços", "Verifique se o servidor está rodando"));
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.texto}>HomeAgendamento</Text>
+      <Text style={styles.texto}>HomeServico</Text>
       <FlatList sytle={styles.list}
-        data={getAgendamentos}
-        keyExtractor={item => item.idAgendamento.toString()}
-        renderItem={({ item }) => <ItemListaAgendamento data={item} />}
+        data={getServico}
+        keyExtractor={item => item.idServico.toString()}
+        renderItem={({ item }) => <ItemListaServico data={item} />}
       />
       <TouchableOpacity style={styles.botao} title="Voltar" onPress={() => navigation.goBack()}>
         <Text style={styles.textoBotao}>
@@ -30,7 +30,7 @@ function HomeAgendamento({ navigation }) {
   );
 }
 
-export default HomeAgendamento;
+export default HomeServico;
 
 const styles = StyleSheet.create({
   container: {

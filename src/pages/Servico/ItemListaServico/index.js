@@ -2,50 +2,34 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 
-class ItemListaCliente extends Component {
-
+class ItemListaServico extends Component {
   render() {
     return (
       <View style={styles.container}>
-
         <ScrollView>
-
-          <Text style={styles.title}>Cliente</Text>
+          <Text style={styles.title}>Servico</Text>
           <View style={styles.input}>
             <Text style={styles.inputTextChave}>id: </Text>
-            <Text style={styles.inputTextValor}>{this.props.data.idCliente}</Text>
+            <Text style={styles.inputTextValor}>{this.props.data.idServico}</Text>
           </View>
-
           <View style={styles.input}>
-            <Text style={styles.inputTextChave}>Nome do Cliente: </Text>
-            <Text style={styles.inputTextValor}>{this.props.data.nome} </Text>
+            <Text style={styles.inputTextChave}>Serviço: </Text>
+            <Text style={styles.inputTextValor}>{this.props.data.tipoServico} </Text>
           </View>
-
           <View style={styles.input}>
-            <Text style={styles.inputTextChave}>Cpf: </Text>
-            <Text style={styles.inputTextValor}>{this.props.data.cpf} </Text>
+            <Text style={styles.inputTextChave}>Valor: </Text>
+            <Text style={styles.inputTextValor}>{this.props.data.valor} </Text>
           </View>
-
-          <View style={styles.input}>
-            <Text style={styles.inputTextChave}>Endereco: </Text>
-            <Text style={styles.inputTextValor}>{this.props.data.endereco} </Text>
-          </View>
-
-          <View style={styles.input}>
-            <Text style={styles.inputTextChave}>Telefone: </Text>
-            <Text style={styles.inputTextValor}>{this.props.data.telefone} </Text>
-          </View>
-
         </ScrollView>
-
       </View>
     )
   }
 }
 
-export default ItemListaCliente;
+export default ItemListaServico;
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -55,13 +39,24 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 10
   },
-
+  list: {
+    marginStart: 14,
+    marginEnd: 14,
+  },
+  label: {
+    color: 'black',
+    margin: 20,
+    marginLeft: 0,
+  },
+  button: {
+    marginTop: 40,
+    color: 'white',
+    height: 40,
+    backgroundColor: 'black',
+    borderRadius: 4,
+  },
   inputTextChave: {
     fontWeight: 'bold',
-
-  },
-  inputTextValor: {
-
   },
   input: {
     backgroundColor: '#e7e7e7',
@@ -72,9 +67,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   title: {
-    color: '#006335',
+    color: 'black',
     textAlign: 'center',
     fontWeight: "bold",
-    fontSize: 15
+    fontSize: 15,
+    marginBottom:10
   }
 });
